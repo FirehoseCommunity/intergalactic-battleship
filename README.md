@@ -7,3 +7,4 @@ A battleship game created by [Firehose Project](http://thefirehoseproject.com) s
 ## Contributors
 * Robert Sapunarich
 * Aubrette Reid
+* Katrina Schreiber
