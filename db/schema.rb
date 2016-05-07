@@ -17,9 +17,8 @@ ActiveRecord::Schema.define(version: 20160506185102) do
   enable_extension "plpgsql"
 
   create_table "games", force: true do |t|
-    t.integer  "game_id"
-    t.integer  "jedi_user"
-    t.integer  "sith_user"
+    t.integer  "jedi_user_id"
+    t.integer  "sith_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
