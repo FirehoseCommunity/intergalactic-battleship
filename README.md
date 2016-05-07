@@ -9,4 +9,8 @@ A battleship game created by [Firehose Project](http://thefirehoseproject.com) s
 * Aubrette Reid
 * Katrina Schreiber
 * Wil Santana
+<<<<<<< HEAD
 * Kamakshi Patel
+=======
+* Kamakshi Patel
+>>>>>>> fredosantana-intergalactic-battleship
