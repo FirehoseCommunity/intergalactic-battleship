@@ -10,3 +10,4 @@ A battleship game created by [Firehose Project](http://thefirehoseproject.com) s
 * Katrina Schreiber
 * Wil Santana
 * Kamakshi Patel
+* [Risse Rigdon](https://github.com/risu-kun)
