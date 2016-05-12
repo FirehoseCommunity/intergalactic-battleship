@@ -7,3 +7,7 @@ A battleship game created by [Firehose Project](http://thefirehoseproject.com) s
 ## Contributors
 * Robert Sapunarich
 * Aubrette Reid
+* Katrina Schreiber
+* Wil Santana
+* Kamakshi Patel
+* [Risse Rigdon](https://github.com/risu-kun)
