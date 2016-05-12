@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20160507014601) do
     t.integer  "y_coordinate"
     t.integer  "game_id"
     t.boolean  "hit"
-
     t.datetime "created_at"
     t.datetime "updated_at"
   end

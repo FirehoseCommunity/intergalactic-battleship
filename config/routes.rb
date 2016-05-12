@@ -1,13 +1,13 @@
 IntergalacticBattleship::Application.routes.draw do
 
   root 'games#index'
-  root "strikes#index"
+  #root "strikes#index"
   resources :strikes, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static_pages#index'
+  #root 'static_pages#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
