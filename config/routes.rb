@@ -1,4 +1,6 @@
 IntergalacticBattleship::Application.routes.draw do
+
+  resources :games, only: [:index]
   devise_for :users
   root 'static_pages#index'
   resources :strikes, only: [:new, :create, :index, :show]
@@ -6,8 +8,6 @@ IntergalacticBattleship::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

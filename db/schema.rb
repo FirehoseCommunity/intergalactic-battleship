@@ -16,6 +16,13 @@ ActiveRecord::Schema.define(version: 20160512125643) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "games", force: true do |t|
+    t.integer  "jedi_user_id"
+    t.integer  "sith_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "strikes", force: true do |t|
     t.integer  "user_id"
     t.integer  "x_coordinate"
