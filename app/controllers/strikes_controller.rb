@@ -5,6 +5,7 @@ class StrikesController < ApplicationController
   end
 
   def index
+    
   end
 
   def create
