@@ -3,6 +3,7 @@ IntergalacticBattleship::Application.routes.draw do
   resources :games, only: [:index]
   devise_for :users
   root 'static_pages#index'
+  resources :ships, only: [:index]
   resources :strikes, only: [:new, :create, :index, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
