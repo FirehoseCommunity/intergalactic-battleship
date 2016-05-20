@@ -8,4 +8,12 @@ RSpec.describe ShipsController, type: :controller do
     end
   end
 
+  describe "ships#create action" do
+    it "should successfully create a ship" do
+      sith = FactoryGirl.create(:user)
+      post :create, ship: FactoryGirl.create(:ship)
+      expect(response).to have_http_status(:success)
+    end
+  end
+
 end
