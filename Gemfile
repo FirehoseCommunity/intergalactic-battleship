@@ -34,11 +34,10 @@ gem 'jbuilder', '~> 1.2'
 # Use to run devise
 gem 'devise'
 
-# Include factory_girl_rails for dummy objects
-gem 'factory_girl_rails'
-
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  # Include factory_girl_rails for dummy objects
+  gem 'factory_girl_rails'
 end
 
 group :doc do
