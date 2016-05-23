@@ -10,7 +10,11 @@ RSpec.describe ShipsController, type: :controller do
 
   describe "ships#create action" do
     it "should successfully create a ship" do
-      post :create, ship: FactoryGirl.create(:ship)
+      post :create, ship: { 
+        name:           'starkiller base', 
+        x_coordinate:   3, 
+        y_coordinate:   4, 
+        vertical?:      true }
       expect(response).to have_http_status(:success)
       star_destroyer = Ship.last
       expect(star_destroyer.vertical?).to eq(true)
