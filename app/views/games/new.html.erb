@@ -6,3 +6,12 @@
 <%= link_to 'WELCOME TO THE DARK SIDE', '#', class: 'btn btn-danger'%>
 </div>
 <hr>
+
+<div>
+
+<%= simple_form_for @game do |f| %>
+  <%= f.submit "WELCOME TO THE LIGHT SIDE", :user => :jedi_user, :class => 'btn btn-primary' %>
+  <%= f.submit "WELCOME TO THE DARK SIDE", :user => :sith_user, :class => 'btn btn-primary' %>
+<% end %>
+
+</div>

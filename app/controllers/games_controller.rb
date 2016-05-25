@@ -10,8 +10,12 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = current_user.games.create
+    @game = current_user.games.create(game_params)
     redirect_to game_path
+  end
+
+  def game_params
+    params.require(:user).permit(:jedi_user, :sith_user)
   end
 
 end
