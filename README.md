@@ -11,3 +11,4 @@ A battleship game created by [Firehose Project](http://thefirehoseproject.com) s
 * Wil Santana
 * Kamakshi Patel
 * [Risse Rigdon](https://github.com/risu-kun)
+* [Diane Van Etten](https://github.com/dvanetten03)
