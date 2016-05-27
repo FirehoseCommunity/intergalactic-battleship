@@ -1,17 +1,8 @@
 <h1> PICK A SIDE </h1>
 <hr>
 <div>
-<%= link_to 'WELCOME TO THE LIGHT SIDE', '#', class: 'btn btn-primary'%>
-
-<%= link_to 'WELCOME TO THE DARK SIDE', '#', class: 'btn btn-danger'%>
+<%= link_to 'Become a Jedi Master', games_path(jedi_user_id: current_user.id), class: 'btn btn-primary', method: :post%>
+​
+<%= link_to 'Become a Sith Master', games_path(sith_user_id: current_user.id), class: 'btn btn-danger', method: :post%>
 </div>
 <hr>
-
-<div>
-
-<%= simple_form_for @game do |f| %>
-  <%= f.submit "WELCOME TO THE LIGHT SIDE", :user => :jedi_user, :class => 'btn btn-primary' %>
-  <%= f.submit "WELCOME TO THE DARK SIDE", :user => :sith_user, :class => 'btn btn-primary' %>
-<% end %>
-
-</div>
