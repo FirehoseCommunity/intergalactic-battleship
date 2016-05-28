@@ -2,9 +2,16 @@ require 'rails_helper'
 
 RSpec.describe GamesController, type: :controller do
 
-  describe "games#index action" do
+  #insert before actions here to create user
 
+
+
+  describe "games#index action" do
+    
     it "should successfully show the page" do
+      jedi_user = FactoryGirl.create(:jedi_user)
+      sign_in jedi_user
+
       get :index
       expect(response).to have_http_status(:success)
     end
@@ -28,21 +35,21 @@ RSpec.describe GamesController, type: :controller do
   describe "games#create action" do
     it "should require users to be logged in" do
       post :create, game: {
-        jedi_user: 1, 
-        sith_user: 1
+        jedi_user: 1 
+        
       }
       expect(response).to redirect_to new_user_session_path
     end
-
+ 
     it "should successfully create a new game in our database" do
       jedi_user = FactoryGirl.create(:jedi_user)
       sign_in jedi_user
 
       post :create, game: {
-        jedi_user: 1, 
-        sith_user: 1
+        jedi_user: 1 
+        
       }
-      expect(response).to redirect_to root_path
+      expect(response).to redirect_to games_path
       game = Game.last
       expect(game.jedi_user).to eq(1)
       expect(game.sith_user).to eq(1)

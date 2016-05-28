@@ -10,12 +10,19 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.create(jedi_user_id: params[:jedi_user_id], sith_user_id: params[:sith_user_id])
+    #@game = Game.create(jedi_user: params[:jedi_user], sith_user: params[:sith_user])
+    @game = Game.create(game_params)
     if @game.valid?
-      redirect_to root_path
+      redirect_to games_path
     else
       render :new, status: :unprocessable_entity
     end  
+  end
+
+  private
+
+  def game_params
+    params.require(:game).permit(:jedi_user, :sith_user)
   end
 
 end
