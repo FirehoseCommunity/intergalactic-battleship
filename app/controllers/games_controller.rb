@@ -11,7 +11,11 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.create(jedi_user_id: params[:jedi_user_id], sith_user_id: params[:sith_user_id])
-    redirect_to games_path
+    if @game.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end  
   end
 
 end
