@@ -52,7 +52,6 @@ RSpec.describe GamesController, type: :controller do
       expect(response).to redirect_to games_path
       game = Game.last
       expect(game.jedi_user).to eq(1)
-      expect(game.sith_user).to eq(1)
       
     end
 
@@ -61,7 +60,7 @@ RSpec.describe GamesController, type: :controller do
       sign_in jedi_user
 
       game_count = Game.count
-      post :create, game: {jedi_user: '' }
+      post :create, game: {jedi_user: 1 }
       expect(response).to have_http_status(:unprocessable_entity)
       expect(Game.count).to eq Game.count
     end  
