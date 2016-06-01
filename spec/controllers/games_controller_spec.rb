@@ -4,13 +4,11 @@ RSpec.describe GamesController, type: :controller do
 
   #insert before actions here to create user
 
-
-
   describe "games#index action" do
     
     it "should successfully show the page" do
-      jedi_user = FactoryGirl.create(:jedi_user)
-      sign_in jedi_user
+      user = FactoryGirl.create(:sith_user)
+      sign_in user
 
       get :index
       expect(response).to have_http_status(:success)
@@ -24,8 +22,8 @@ RSpec.describe GamesController, type: :controller do
     end
 
     it "should successfully show the pick a side page" do
-      jedi_user = FactoryGirl.create(:jedi_user)
-      sign_in jedi_user
+      user = FactoryGirl.create(:sith_user)
+      sign_in user
 
       get :new
       expect(response).to have_http_status(:success)
@@ -34,35 +32,27 @@ RSpec.describe GamesController, type: :controller do
 
   describe "games#create action" do
     it "should require users to be logged in" do
-      post :create, game: {
-        jedi_user: 1 
-        
-      }
+      
+      post :create, game: {:sith_user_id => 1 }
       expect(response).to redirect_to new_user_session_path
     end
  
     it "should successfully create a new game in our database" do
-      jedi_user = FactoryGirl.create(:jedi_user)
-      sign_in jedi_user
+      user = FactoryGirl.create(:sith_user)
+      sign_in user
 
-      post :create, game: {
-        jedi_user: 1 
-        
-      }
-      expect(response).to redirect_to games_path
+      post :create, game: {:sith_user_id => 1 }
       game = Game.last
-      expect(game.jedi_user).to eq(1)
+      expect(response).to redirect_to games_path
       
     end
 
     it "should properly deal with validation errors" do
-      jedi_user = FactoryGirl.create(:jedi_user)
-      sign_in jedi_user
+      user = FactoryGirl.create(:sith_user)
+      sign_in user
 
-      game_count = Game.count
-      post :create, game: {jedi_user: 1 }
+      post :create, game: {:sith_user_id => 0}
       expect(response).to have_http_status(:unprocessable_entity)
-      expect(Game.count).to eq Game.count
     end  
   end
 
