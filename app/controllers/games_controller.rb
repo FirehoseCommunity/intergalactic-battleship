@@ -11,11 +11,10 @@ class GamesController < ApplicationController
 
   def create
     if current_user = game_params[:jedi_user]
-      opponent = game_params[:sith_user]
-      @game = Game.create()
+      @game = Game.create(sith_user: game_params[:sith_user], :jedi_user => current_user)
     else
-      opponent = game_params[:jedi_user]
-      @game = Game.create()
+      current_user = game_params[:sith_user]
+      @game = Game.create(:jedi_user => game_params[:jedi_user], :sith_user => current_user)
     end
 
     # @game = Game.create(jedi_user: params[:jedi_user], sith_user: params[:sith_user])

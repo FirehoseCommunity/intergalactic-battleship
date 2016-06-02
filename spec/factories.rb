@@ -17,7 +17,7 @@ FactoryGirl.define do
   
   factory :game do
     sith_user_id 1
-    jedi_user_id 1
+    jedi_user_id 2
     association :sith_user
     association :jedi_user
   end

@@ -33,7 +33,7 @@ RSpec.describe GamesController, type: :controller do
   describe "games#create action" do
     it "should require users to be logged in" do
       
-      post :create, game: {:sith_user_id => 1 }
+      post :create, game: {:sith_user_id => 1, :jedi_user_id => 2}
       expect(response).to redirect_to new_user_session_path
     end
  
@@ -41,7 +41,7 @@ RSpec.describe GamesController, type: :controller do
       user = FactoryGirl.create(:sith_user)
       sign_in user
 
-      post :create, game: {:sith_user_id => 1 }
+      post :create, game: {:sith_user_id => 1, :jedi_user_id => 2}
       game = Game.last
       expect(response).to redirect_to games_path
       
@@ -51,7 +51,7 @@ RSpec.describe GamesController, type: :controller do
       user = FactoryGirl.create(:sith_user)
       sign_in user
 
-      post :create, game: {:sith_user_id => 0}
+      post :create, game: {:sith_user_id => 0, :jedi_user_id => 0}
       expect(response).to have_http_status(:unprocessable_entity)
     end  
   end
