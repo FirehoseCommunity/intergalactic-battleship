@@ -10,11 +10,11 @@ class GamesController < ApplicationController
   end
 
   def create
-    if current_user = game_params[:jedi_user]
-      @game = Game.create(sith_user: game_params[:sith_user], :jedi_user => current_user)
+    if current_user = params[:jedi_user]
+      @game = Game.create(:jedi_user => current_user)
     else
-      current_user = game_params[:sith_user]
-      @game = Game.create(:jedi_user => game_params[:jedi_user], :sith_user => current_user)
+      current_user = params[:sith_user]
+      @game = Game.create(:sith_user => current_user)
     end
 
     # @game = Game.create(jedi_user: params[:jedi_user], sith_user: params[:sith_user])
@@ -28,8 +28,8 @@ class GamesController < ApplicationController
 
   private
 
-  def game_params
-    params.require(:game).permit(:jedi_user, :sith_user)
-  end
+  # def game_params
+  #   params.require(:game).permit(:jedi_user, :sith_user)
+  # end
 
 end
