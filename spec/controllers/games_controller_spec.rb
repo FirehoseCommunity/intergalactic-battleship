@@ -38,7 +38,7 @@ RSpec.describe GamesController, type: :controller do
     end
  
     it "should successfully create a new game in our database" do
-      user = FactoryGirl.create(:sith_user)
+      user = FactoryGirl.create(:user)
       sign_in user
 
       post :create, game: {:sith_user_id => 1}

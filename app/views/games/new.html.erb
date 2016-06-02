@@ -1,8 +1,17 @@
 <h1> PICK A SIDE </h1>
 <hr>
 <div>
-<%= link_to 'Become a Jedi Master', games_path(jedi_user_id: current_user.id), class: 'btn btn-primary', method: :post%>
+
+  <% if @game.invalid? %>
+    You tried to create a game with no players.
+  <% end %>
+  <a href="/games" data-method="post" class="btn btn-primary">Become a Jedi Master</a>
+
+  <a href="/games?jedi_user_id=2" data-method="post" class="btn btn-primary">Become a Jedi Master</a>
+<%= link_to 'Become a Jedi Master', games_path(jedi_user_id: current_user.id), class: 'btn btn-primary', method: :post %>
 ​
-<%= link_to 'Become a Sith Master', games_path(sith_user_id: current_user.id), class: 'btn btn-danger', method: :post%>
+  <a href="/games?sith_user_id=10" data-method="post" class="btn btn-primary">Become a Sith Master</a>
+
+<%= link_to 'Become a Sith Master', games_path(sith_user_id: current_user.id), class: 'btn btn-danger', method: :post %>
 </div>
 <hr>
