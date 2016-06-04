@@ -10,26 +10,19 @@ class GamesController < ApplicationController
   end
 
   def create
-    if current_user = params[:jedi_user]
-      @game = Game.create(:jedi_user => current_user)
+    if current_user.id == params[:jedi_user_id].to_i
+      @game = Game.create(:jedi_user_id => current_user.id)
+    elsif current_user.id == params[:sith_user_id].to_i
+      @game = Game.create(:sith_user_id => current_user.id)
     else
-      current_user = params[:sith_user]
-      @game = Game.create(:sith_user => current_user)
+      render text: "Invalid Request", status: :unprocessable_entity
     end
 
-    # @game = Game.create(jedi_user: params[:jedi_user], sith_user: params[:sith_user])
-     # @game = Game.create(game_params)
-    if @game.valid?
-      redirect_to games_path
-    else
-      render :new, status: :unprocessable_entity
-    end  
+    # if @game.valid?
+    #   redirect_to games_path
+    # else
+    #   render :new, status: :unprocessable_entity
+    # end  
   end
-
-  private
-
-  # def game_params
-  #   params.require(:game).permit(:jedi_user, :sith_user)
-  # end
 
 end
