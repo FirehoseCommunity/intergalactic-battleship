@@ -6,15 +6,47 @@
 }
 
 .navbar {
-  border-radius:0;
-  font-family: "Helvetica Neue", Helvetica;
-  font-weight: 200;
-  color: white;
-  box-shadow: 0px 1px 3px #2a2a2a;
+	border-radius: 0;
+	margin-bottom: 0px;
+	background-color: black;
 }
 
-.navbar-inverse a.navbar-brand {
-  font-family: "Helvetica Neue", Helvetica;
-  font-weight: 100;
+.navbar-inverse .navbar-brand {
+	color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: white;
+}
+
+#landing_page_image img {
+	max-width: 100%;
+	max-height: 100%;
+	margin-top: -70px;
+}
+
+body {
+	background-color: black;
+}
+
+.lpage_header h1 {
+	font-family: 'source_sans_probold', sans-serif;
+	color: yellow;
+	margin-top: -20px;
+	text-align: center;
+	font-size: 80px;
+}
+
+h2 {
+	font-family: 'source_sans_probold', sans-serif;
+	color: white
+}
+
+a, p {
+	font-family: 'source_sans_problack', sans-serif;
+}
+
+a:hover {
+	text-decoration: none;
 }
 
