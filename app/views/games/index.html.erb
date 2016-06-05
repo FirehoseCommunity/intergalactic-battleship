@@ -1,3 +1,14 @@
-<h1>Welcome to my intergalactic layer, yo.</h1>
-<h1><%= @game.inspect %></h1>
 
+<h1 class= "text-center"> Join A Game! </h1>
+
+<div class = "col-xs-12">
+    <% @games.each do |game| %>
+      <div class = "booyah-box col-xs-10 col-xs-offset-1">
+        <%= game.inspect %>
+        
+        <%= link_to 'Join Game', "#", class: 'btn btn-primary', method: :post%>
+      </div>
+    <% end %> 
+  
+  
+</div>
