@@ -18,11 +18,11 @@ class GamesController < ApplicationController
       render text: "Invalid Request", status: :unprocessable_entity
     end
 
-    # if @game.valid?
-    #   redirect_to games_path
-    # else
-    #   render :new, status: :unprocessable_entity
-    # end  
+    if @game.valid?
+      redirect_to games_path
+    else
+      render :new, status: :unprocessable_entity
+    end  
   end
 
 end
