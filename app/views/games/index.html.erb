@@ -1,3 +1,14 @@
-<h4>This will be where the list of current games are located.</h4>
-<h1><%= @game.inspect %></h1>
 
+<h1 class= "text-center"> Join A Game! </h1>
+
+<div class = "col-xs-12">
+    <% @games.each do |game| %>
+      <div class = "booyah-box col-xs-10 col-xs-offset-1">
+        <%= game.inspect %>
+        
+        <%= link_to 'Join Game', "#", class: 'btn btn-primary', method: :post%>
+      </div>
+    <% end %> 
+  
+  
+</div>

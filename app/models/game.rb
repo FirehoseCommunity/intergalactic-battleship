@@ -8,12 +8,8 @@ class Game < ActiveRecord::Base
 
 
   def validate_sith_user_or_jedi_user
-    if self.sith_user_id.blank? && self.jedi_user_id.blank?
+    if self.sith_user.blank? && self.jedi_user.blank?
       self.errors.add(:jedi_user_id, "At least one player must join the game.")
-    # elsif (self.sith_user_id.present? && !nil) || (self.jedi_user.present? && !nil)
-    #   return true
-    # else
-    #   false
     end
   end
 
