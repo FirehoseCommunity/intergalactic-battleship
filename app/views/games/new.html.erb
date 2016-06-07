@@ -1,0 +1,9 @@
+<h1> PICK A SIDE </h1>
+<hr>
+<div>
+  <%= link_to 'Become a Jedi Master', games_path(jedi_user_id: current_user.id), class: 'btn btn-primary', method: :post%>
+    ​
+   <%= link_to 'Become a Sith Master', games_path(sith_user_id: current_user.id), class: 'btn btn-danger', method: :post%>
+  
+</div>
+<hr>

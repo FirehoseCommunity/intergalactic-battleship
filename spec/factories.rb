@@ -1,18 +1,10 @@
 FactoryGirl.define do
-  factory :sith_user, class: User do
+  factory :user, class: User do
     sequence :email do |n|
       "kylolovesgrandpa#{n}@example.com"
     end
     password "finishwhatyoustarted"
     password_confirmation "finishwhatyoustarted"
-  end
-
-  factory :jedi_user, class: User do
-    sequence :email do |n|
-      "rey@example.com"
-    end
-    password "wherearemyparents"
-    password_confirmation "wherearemyparents"
   end
   
   factory :game do
