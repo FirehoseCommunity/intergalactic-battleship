@@ -20,5 +20,26 @@ class GamesController < ApplicationController
       render text: "Invalid Request", status: :unprocessable_entity
     end
   end
+
+  private
+
+  # helper_method :find_empty_user
+
+  # def pending_games
+  #   @pending_games = Game.where
+  # end
+
+  # def find_empty_user(game)
+  #   @pending_game = Game.find(game.id)
+  #   @join_as
+  #   @opponent
+  #   if @pending_game.jedi_user_id.present?
+  #     @join_as = "Sith"
+  #     @opponent = jedi_user_id
+  #   elsif @pending_game.sith_user_id.present?
+  #     @join_as = "Jedi"
+  #     @opponent = sith_user_id
+  #   end
+  # end
   
 end

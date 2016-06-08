@@ -58,5 +58,32 @@ RSpec.describe GamesController, type: :controller do
     end  
   end
 
+  describe "games#join_game action" do
+
+    context "valid credentials" do
+      context "valid join request" do
+        it "will successfully update a game with second player" do
+# test that the record is updated
+# test that current_user is redirected to the ship staging page
+# test that primary game owner is alerted to game update
+        end
+      end
+
+      context "invalid join request" do
+        it "will prevent user from joining their own game" do
+# test adding an error in flash
+# test redirecting to game detail
+        end
+      end
+    end
+
+    context "invalid credentials" do
+      it "will require user to be logged in" do
+# test error/alert
+# test redirect to new_user_session_path or new_user_registration_path?
+      end
+    end
+    
+  end
 
 end

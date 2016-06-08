@@ -3,10 +3,12 @@
 
 <div class = "col-xs-12">
     <% @games.each do |game| %>
+      <% find_empty_user(game) %>
       <div class = "booyah-box col-xs-10 col-xs-offset-1">
         <%= game.inspect %>
+        <p><%= "Join as #{@join_as} against #{@opponent.email}" %></p>
         
-        <%= link_to 'Join Game', "#", class: 'btn btn-primary', method: :post%>
+        <%= link_to 'Join Game', "#", class: 'btn btn-primary pull-right', method: :post%>
       </div>
     <% end %> 
   

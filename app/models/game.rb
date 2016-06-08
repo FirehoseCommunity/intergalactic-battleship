@@ -13,5 +13,13 @@ class Game < ActiveRecord::Base
     end
   end
 
+  # def waiting_for_player?
+  #   jedi_user.nil? || sith_user.nil?
+  # end
+
+  # def pending_games
+  #   @pending_games = Game.where("jedi_user_id IS NULL OR sith_user_id IS NULL")
+  # end
+
 end
 
