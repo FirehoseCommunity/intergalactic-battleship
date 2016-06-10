@@ -58,7 +58,7 @@ RSpec.describe GamesController, type: :controller do
     end  
   end
 
-  describe "games#join_game action" do
+  describe "games#update action" do
 
     context "valid credentials" do
       context "valid join request" do
@@ -83,7 +83,7 @@ RSpec.describe GamesController, type: :controller do
 # test redirect to new_user_session_path or new_user_registration_path?
       end
     end
-    
+
   end
 
 end
