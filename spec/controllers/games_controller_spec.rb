@@ -58,5 +58,15 @@ RSpec.describe GamesController, type: :controller do
     end  
   end
 
+  describe "games#update" do
+    it "should allow users to join a game as player 2" do
+      user = FactoryGirl.create(:user)
+      sign_in user 
+      
+      patch :update, id: user.id, user: user.id
+      expect(response).to redirect_to ships_path 
+      user.reload
+    end
+  end
 
 end
