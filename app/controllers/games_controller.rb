@@ -2,7 +2,7 @@ class GamesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :index, :update]
 
   def index
-    @games = Game.game
+    @games = Game.unjoined_games
   end
 
   def new

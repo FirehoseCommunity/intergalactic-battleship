@@ -6,7 +6,7 @@ class Game < ActiveRecord::Base
   belongs_to :sith_user, foreign_key: 'sith_user_id', class_name: "User"
   has_many :ships
 
-  scope :game, -> { where("jedi_user_id is NULL or sith_user_id is NULL")}
+  scope :unjoined_games, -> { where("jedi_user_id is NULL or sith_user_id is NULL")}
 
   def validate_sith_user_or_jedi_user
     if self.sith_user.blank? && self.jedi_user.blank?
