@@ -21,14 +21,11 @@
 	</div>
 </div>
 <div class="col-xs-10 col-xs-offset-1 features text-center">
-	<div class="col-sm-4">
-		<a href="#"><h2>New Game <br />(Player 1)</h2></a>
+	<div class="col-sm-6">
+		<%= link_to 'New Game (Player 1)', new_game_path, class: 'h2'%>
 	</div>
-	<div class="col-sm-4">
-		<a href="#"><h2>Join a Game <br />(Player 2)</h2></a>
-	</div>
-	<div class="col-sm-4">
-		<a href="#"><h2>Watch a Game</h2></a>
+	<div class="col-sm-6">
+		<%= link_to 'Join A Game (Player 2)', games_path, class: 'h2'%>
 	</div>
 </div>
 

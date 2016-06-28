@@ -25,10 +25,10 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     if current_user.id == params[:jedi_user_id].to_i
       @game.update(sith_user_id: current_user.id)
-      redirect_to ships_path
+      render template: "ships/index.html.erb" 
     elsif current_user.id == params[:sith_user_id].to_i
       @game.update(jedi_user_id: current_user.id)
-      redirect_to ships_path
+      render template: "ships/index2.html.erb" 
     else
       render text: "Invalid Request", status: :unprocessable_entity
     end

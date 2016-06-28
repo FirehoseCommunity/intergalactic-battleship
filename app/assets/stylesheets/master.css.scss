@@ -5,6 +5,8 @@
   clear:both;
 }
 
+
+
 .navbar {
 	border-radius: 0;
 	margin-bottom: 0px;
@@ -37,17 +39,14 @@ body {
 	font-size: 80px;
 }
 
-h2 {
+.h2 {
 	font-family: 'source_sans_probold', sans-serif;
 	color: white
 }
 
-a, p {
-	font-family: 'source_sans_problack', sans-serif;
-}
-
-a:hover {
+.h2:hover {
 	text-decoration: none;
+  color: yellow;
 }
 
 .booyah-box {
@@ -90,5 +89,4 @@ h1 {
 .sith-btn {
   margin-top : 50px;
 }
-
 

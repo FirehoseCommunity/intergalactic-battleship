@@ -1,1 +1,56 @@
-<h1> SHIPS </h1>
+
+<h1 class="text-center"> Place your Jedi ships! </h1>
+<p class="text-center" id="inst">Click and drag the ships to the grid. <br/>
+   Use the rotate button to position the ship <br />
+   horizontally or vertically.</p>
+
+<div class="col-sm-6">
+
+  <table id="ship-table">
+    <tbody>
+      <tr>
+        <td><h4>A Wing Fighter</h4></td>
+        <td><%= image_tag 'ship1-1.png', class: 'img-responsive ship-img' %></td>
+      </tr>
+      <tr>
+        <td><h4>X Wing Starfighter</h4></td>
+        <td><%= image_tag 'ship2_3.png', class: 'img-responsive ship-img' %></td>
+      </tr>
+      <tr>
+        <td><h4>B Wing Fighter</h4></td>
+        <td><%= image_tag 'ship2_3.png', class: 'img-responsive ship-img' %></td>
+      </tr>
+      <tr>
+        <td><h4>Millennium Fleet</h4></td>
+        <td><%= image_tag 'ship4-1.png', class: 'img-responsive ship-img' %></td>
+      </tr>
+      <tr>
+        <td><h4>Rebel Fleet</h4></td>
+        <td><%= image_tag 'ship5-1.png', class: 'img-responsive ship-img' %></td>
+      </tr>
+      <tr>
+        <td><h4 id="rotate-text">Rotate</h4></td>
+        <td><%= image_tag "rotate_btn.png", class: 'img-responsive rotate-btn' %></td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>
+
+
+<div class="col-sm-6">
+
+  <table id="table-grid">
+    <tbody id="grid">
+
+    </tbody>
+  </table>
+
+</div>
+
+<div>
+<%= link_to 'Play Game!', "#", class: 'btn btn-danger play-btn', method: :put%>
+</div>
+
+
+
