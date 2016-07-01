@@ -1,8 +1,7 @@
 
 <h1 class="text-center"> Place your Jedi ships! </h1>
 <p class="text-center" id="inst">Click and drag the ships to the grid. <br/>
-   Use the rotate button to position the ship <br />
-   horizontally or vertically.</p>
+   Click on ship to position it horizontally or vertically.</p>
 
 <div class="col-sm-6">
 
@@ -10,7 +9,7 @@
     <tbody>
       <tr>
         <td><h4>A Wing Fighter</h4></td>
-        <td><%= image_tag 'ship1-1.png', class: 'img-responsive ship-img' %></td>
+        <td><%= image_tag 'ship1-1.png', class: 'img-responsive ship-img current-ship' %></td>
       </tr>
       <tr>
         <td><h4>X Wing Starfighter</h4></td>
@@ -28,10 +27,10 @@
         <td><h4>Rebel Fleet</h4></td>
         <td><%= image_tag 'ship5-1.png', class: 'img-responsive ship-img' %></td>
       </tr>
-      <tr>
+      <!-- <tr>
         <td><h4 id="rotate-text">Rotate</h4></td>
         <td><%= image_tag "rotate_btn.png", class: 'img-responsive rotate-btn' %></td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
   
