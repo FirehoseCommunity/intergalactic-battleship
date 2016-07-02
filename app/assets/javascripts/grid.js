@@ -1,7 +1,7 @@
 $(function() {
 
   var rows = [];
-  var rowLabel = [" ", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; 
+  var rowLabel = [" ", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
   var colLabel = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
   var cellFill = null;
   var rowStr = null;
@@ -33,7 +33,6 @@ $(function() {
 
   
   $('.ship-img').draggable({
-    // containment: '#table-grid',
     cursor: 'move',
     stack: '#battleship-grid'
     
@@ -44,20 +43,10 @@ $(function() {
     drop: function(event, ui) {
       var dropped = ui.draggable;
 
-      var angle = 90;
-      $('.ship-img').click(function(){
-
-        $(this).css ({
-            '-webkit-transform': 'rotate(' + angle + 'deg)',
-            '-moz-transform': 'rotate(' + angle + 'deg)',
-            '-o-transform': 'rotate(' + angle + 'deg)',
-            '-ms-transform': 'rotate(' + angle + 'deg)'
-        });
-        angle+=90;
-        
+      $('.ship-img').click(function() {
+          $(this).toggleClass('rotate');
       });
     }
-
   });
 
   

@@ -5,17 +5,20 @@
 #battleship-grid {
   border: 3px solid #fff;
   background-color: #9BC1F4;
-  padding: 10px;
   text-align: center;
   vertical-align: middle;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   color: #fff;
   font-weight: bold;
 }
 
 #table-grid { 
   margin-bottom: 50px;
+}
+
+.ship-name {
+  color: #fff;
 }
 
 .ship-img {
@@ -48,3 +51,10 @@
   margin-top: 55px;
 }
 
+.rotate{
+   -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
