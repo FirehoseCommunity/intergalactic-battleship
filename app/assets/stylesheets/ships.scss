@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#battleship-grid {
+.battleship-grid {
   border: 3px solid #fff;
   background-color: #9BC1F4;
   text-align: center;
@@ -23,7 +23,11 @@
 
 .ship-img {
  margin-left: 80px;
- width: 35%;
+ width: 40%;
+}
+
+.ship5 {
+  width: 47%;
 }
 
 #inst {
@@ -57,4 +61,5 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    transform-origin: bottom left;
 }

@@ -3,4 +3,52 @@
 <p class="text-center" id="inst">Click and drag the ships to the grid. <br/>
    Click on ship to position it horizontally or vertically.</p>
 
+<div class="col-sm-6">
 
+  <table id="ship-table">
+    <tbody>
+      <tr>
+        <td><h4 class="ship-name">A Wing Fighter</h4></td>
+        <td><%= image_tag 'ship1-1.png', class: 'img-responsive ship-img current-ship' %></td>
+      </tr>
+      <tr>
+        <td><h4 class="ship-name">X Wing Starfighter</h4></td>
+        <td><%= image_tag 'ship2_3.png', class: 'img-responsive ship-img' %></td>
+      </tr>
+      <tr>
+        <td><h4 class="ship-name">B Wing Fighter</h4></td>
+        <td><%= image_tag 'ship2_3.png', class: 'img-responsive ship-img' %></td>
+      </tr>
+      <tr>
+        <td><h4 class="ship-name">Millennium Fleet</h4></td>
+        <td><%= image_tag 'ship4-1.png', class: 'img-responsive ship-img' %></td>
+      </tr>
+      <tr>
+        <td><h4 class="ship-name">Rebel Fleet</h4></td>
+        <td><%= image_tag 'ship5-1.png', class: 'img-responsive ship-img ship5' %></td>
+      </tr>
+      <!-- <tr>
+        <td><h4 id="rotate-text">Rotate</h4></td>
+        <td><%= image_tag "rotate_btn.png", class: 'img-responsive rotate-btn' %></td>
+      </tr> -->
+    </tbody>
+  </table>
+  
+</div>
+
+<div class="col-sm-6">
+
+  <table id="table-grid">
+    <tbody id="grid">
+     <% (0..9).each do |row| %>
+        <tr class="<%= row %>">
+        <% ('A'..'J').each do |col| %>
+          <td class="col-xs-1 battleship-grid" data-xCoord="<%= col %>" data-yCoord="<%= row %>"</td>
+        <% end %>  
+        </tr>
+     <% end %> 
+        
+    </tbody>
+  </table>
+
+</div>
