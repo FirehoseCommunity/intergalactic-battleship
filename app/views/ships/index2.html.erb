@@ -8,24 +8,24 @@
   <table id="ship-table">
     <tbody>
       <tr>
-        <td><h4 class="ship-name">A Wing Fighter</h4></td>
-        <td><%= image_tag 'ship1-1.png', class: 'img-responsive ship-img current-ship' %></td>
+        <td class="ship-name">TIE Interceptor</td>
+        <td><%= image_tag 'ship1-1.png', class: 'img-responsive ship-img moveable' %></td>
       </tr>
       <tr>
-        <td><h4 class="ship-name">X Wing Starfighter</h4></td>
-        <td><%= image_tag 'ship2_3.png', class: 'img-responsive ship-img' %></td>
+        <td class="ship-name">Royal Interceptor</td>
+        <td><%= image_tag 'ship2_3.png', class: 'img-responsive ship-img moveable' %></td>
       </tr>
       <tr>
-        <td><h4 class="ship-name">B Wing Fighter</h4></td>
-        <td><%= image_tag 'ship2_3.png', class: 'img-responsive ship-img' %></td>
+        <td class="ship-name">Imperial Destroyer</td>
+        <td><%= image_tag 'ship2_3.png', class: 'img-responsive ship-img moveable' %></td>
       </tr>
       <tr>
-        <td><h4 class="ship-name">Millennium Fleet</h4></td>
-        <td><%= image_tag 'ship4-1.png', class: 'img-responsive ship-img' %></td>
+        <td class="ship-name">T-4 Shuttle</td>
+        <td><%= image_tag 'ship4-1.png', class: 'img-responsive ship-img moveable' %></td>
       </tr>
       <tr>
-        <td><h4 class="ship-name">Rebel Fleet</h4></td>
-        <td><%= image_tag 'ship5-1.png', class: 'img-responsive ship-img ship5' %></td>
+        <td class="ship-name">Death Star</td>
+        <td><%= image_tag 'ship5-1.png', class: 'img-responsive ship-img ship5 moveable' %></td>
       </tr>
       <!-- <tr>
         <td><h4 id="rotate-text">Rotate</h4></td>
@@ -40,13 +40,18 @@
 
   <table id="table-grid">
     <tbody id="grid">
-     <% (0..9).each do |row| %>
+      <% (0..10).each do |row| %>
         <tr class="<%= row %>">
+        <td class="col-xs-1 battleship-grid"><%= row %></td>
         <% ('A'..'J').each do |col| %>
-          <td class="col-xs-1 battleship-grid" data-xCoord="<%= col %>" data-yCoord="<%= row %>"</td>
+          <% if row == 0 %>
+            <td class="col-xs-1 battleship-grid"><%= col %></td>  
+          <% else %>  
+            <td class="col-xs-1 battleship-grid" data-xCoord="<%= col %>" data-yCoord="<%= row %>"></td>
+          <% end %>   
         <% end %>  
         </tr>
-     <% end %> 
+      <% end %> 
         
     </tbody>
   </table>
