@@ -61,6 +61,7 @@ RSpec.describe GamesController, type: :controller do
   describe "games#update action" do
 
     context "valid credentials" do
+      before each
       context "valid join request" do
         it "will successfully update a game with second player" do
 # test that the record is updated
