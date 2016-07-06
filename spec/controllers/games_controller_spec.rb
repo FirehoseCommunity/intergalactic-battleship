@@ -33,11 +33,11 @@ RSpec.describe GamesController, type: :controller do
   describe "games#create action" do
     it "should require users to be logged in" do
       
-      post :create, :sith_user_id => 1
+      post :create, sith_user_id: 1
       expect(response).to redirect_to new_user_session_path
     end
  
-    it "should successfully create a new game in our database" do
+    it "should successfully create a new game in our database as Sith" do
       user = FactoryGirl.create(:user)
       sign_in user
 
@@ -58,5 +58,26 @@ RSpec.describe GamesController, type: :controller do
     end  
   end
 
+  describe "games#update action"  do
+    it "should allow users to join a game as Jedi" do
+      user = FactoryGirl.create(:user)
+      user2 = FactoryGirl.create(:user)
+      sign_in user
+      g = FactoryGirl.create(:game, sith_user_id: user2.id) 
+
+      patch :update, id: g.id, jedi_user_id: user.id
+      expect(response).to redirect_to ships_path 
+    end
+
+    it "should allow users to join a game as Sith" do
+      user = FactoryGirl.create(:user)
+      user2 = FactoryGirl.create(:user)
+      sign_in user
+      g = FactoryGirl.create(:game, jedi_user_id: user2.id)
+
+      patch :update, id: g.id, sith_user_id: user.id
+      expect(response).to redirect_to ships_path
+    end
+  end
 
 end

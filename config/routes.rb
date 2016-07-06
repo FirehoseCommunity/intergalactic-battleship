@@ -1,6 +1,6 @@
 IntergalacticBattleship::Application.routes.draw do
 
-  resources :games, only: [:index, :new, :create]
+  resources :games, only: [:index, :new, :create, :update]
   devise_for :users
   root 'static_pages#index'
   resources :ships, only: [:index, :create]

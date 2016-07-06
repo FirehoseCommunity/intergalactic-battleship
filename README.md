@@ -15,6 +15,7 @@ Find it on [Heroku](https://intergalacticbattleship.herokuapp.com/)
 * [Risse Rigdon](https://github.com/risu-kun)
 * [Diane Van Etten](https://github.com/dvanetten03)
 * [Amanda Mark](https://github.com/amarkpark/)
+* [Krista Karpan](https://github.com/kristakarpan/)
 
 ## Developer Notes:
 
