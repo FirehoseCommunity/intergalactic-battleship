@@ -23,15 +23,18 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    if current_user.id == params[:jedi_user_id].to_i
-      @game.update(sith_user_id: current_user.id)
-      render template: "ships/index.html.erb" 
-    elsif current_user.id == params[:sith_user_id].to_i
-      @game.update(jedi_user_id: current_user.id)
-      render template: "ships/index2.html.erb" 
-    else
-      render text: "Invalid Request", status: :unprocessable_entity
-    end
+    # This update action is always going to
+    # result in games with same player on both sides
+    # We NEED to rewrite this
+    # if current_user.id == params[:jedi_user_id].to_i
+    #   @game.update(sith_user_id: current_user.id)
+    #   render template: "ships/index.html.erb" 
+    # elsif current_user.id == params[:sith_user_id].to_i
+    #   @game.update(jedi_user_id: current_user.id)
+    #   render template: "ships/index2.html.erb" 
+    # else
+    #   render text: "Invalid Request", status: :unprocessable_entity
+    # end
   end
   
 end
