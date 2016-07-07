@@ -3,30 +3,38 @@
 <br />
 <div class= "col-xs-12">
   <% @games.each do |game|%>
-    <% if game.jedi_user_id != nil %>
+    <% if game.jedi_user_id != nil && game.sith_user_id == nil %>
       <div class="booyah-box col-xs-10 col-xs-offset-1 text-center">
         <div class="col-sm-4" >
-          <h4 id='j-email'><%= current_user.email %></h4>
+          <h4 id='j-email'><%= game.jedi_user.email %></h4>
           <h4 class="name">as Jedi Master</h4>
         </div>
         <div class="col-sm-4" >
           <%= image_tag 'Jedi.png', class: 'img-responsive usr-img' %>
         </div>
         <div class="col-sm-4" >  
-          <%= link_to 'Join Game as Sith Master', game_path(game.id, sith_user_id: current_user.id) , class: 'btn btn-primary sith-btn', method: :put%>
+          <% if current_user && current_user == game.jedi_user %>
+            <button type="button" class="btn btn-primary sith-btn" disabled>Waiting for Sith Master</button>
+          <% elsif current_user && current_user != game.jedi_user %>
+            <%= link_to 'Join Game as Sith Master', game_path(game.id, sith_user_id: current_user.id) , class: 'btn btn-primary sith-btn', method: :put%>
+          <% end %>
         </div>
       </div>
-    <% else %>
+    <% elsif game.sith_user_id != nil && game.jedi_user_id == nil %>
       <div class="booyah-box col-xs-10 col-xs-offset-1 text-center">
         <div class="col-sm-4" > 
-          <h4 id='s-email'><%= current_user.email %></h4>
+          <h4 id='s-email'><%= game.sith_user.email %></h4>
           <h4 class="name"> as Sith Master</h4>
         </div>
         <div class="col-sm-4" >   
           <%= image_tag 'Sith.png', class: 'img-responsive usr-img' %>
         </div>
         <div class="col-sm-4" > 
-          <%= link_to 'Join Game as Jedi Master', game_path(game.id, jedi_user_id: current_user.id), class: 'btn btn-primary jedi-btn', method: :put%>
+          <% if current_user && current_user == game.sith_user %>
+            <button type="button" class="btn btn-primary sith-btn" disabled>Waiting for Jedi Master</button>
+          <% elsif current_user && current_user != game.sith_user %>
+            <%= link_to 'Join Game as Jedi Master', game_path(game.id, jedi_user_id: current_user.id), class: 'btn btn-primary jedi-btn', method: :put%>
+          <% end %>
         </div>
       </div>
     <% end %>
