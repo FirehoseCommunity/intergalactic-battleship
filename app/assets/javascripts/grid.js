@@ -1,21 +1,36 @@
 $(function() {
+
+ 
   
   $('.moveable').draggable({
-    cursor: 'move',
-    stack: '.battleship-grid'
+    stack: '.battleship-grid',
+    cursor:'move',
+    revert: true
     
   });
-  
-  $('#grid').droppable({
-    accept: ".ship-img",
-    drop: function(event, ui) {
-      var dropped = ui.draggable;
 
-      $('.moveable').click(function() {
-          $(this).toggleClass('rotate');
-      });
-    }
+  
+  $('td').droppable({
+    drop: handleDrop 
+
   });
+
+  function handleDrop(event, ui) {
+    var droppedShip = ui.draggable;
+    droppedShip.position({
+      of: $(this),
+      my: 'left top',
+      at: 'left top'
+    });
+    droppedShip.draggable('option', 'revert', false);
+    droppedShip.draggable('option', 'grid', [46, 46]);
+
+    $('.moveable').click(function() {
+    $(this).toggleClass('rotate');
+    });
+  }
+
+  
 
   
 

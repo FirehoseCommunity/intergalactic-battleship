@@ -9,28 +9,25 @@
     <tbody>
       <tr>
         <td class="ship-name">TIE Interceptor</td>
-        <td><%= image_tag 'ship1-1.png', class: 'img-responsive ship-img moveable' %></td>
+        <td><%= image_tag 'ship-1.png', class: 'img-responsive ship-img moveable' %></td>
       </tr>
       <tr>
         <td class="ship-name">Royal Interceptor</td>
-        <td><%= image_tag 'ship2_3.png', class: 'img-responsive ship-img moveable' %></td>
+        <td><%= image_tag 'ship-2.png', class: 'img-responsive ship-img moveable' %></td>
       </tr>
       <tr>
         <td class="ship-name">Imperial Destroyer</td>
-        <td><%= image_tag 'ship2_3.png', class: 'img-responsive ship-img moveable' %></td>
+        <td><%= image_tag 'ship-2.png', class: 'img-responsive ship-img moveable' %></td>
       </tr>
       <tr>
         <td class="ship-name">T-4 Shuttle</td>
-        <td><%= image_tag 'ship4-1.png', class: 'img-responsive ship-img moveable' %></td>
+        <td><%= image_tag 'ship-3.png', class: 'img-responsive ship-img moveable' %></td>
       </tr>
       <tr>
         <td class="ship-name">Death Star</td>
-        <td><%= image_tag 'ship5-1.png', class: 'img-responsive ship-img ship5 moveable' %></td>
+        <td><%= image_tag 'ship-5.png', class: 'img-responsive ship-img moveable' %></td>
       </tr>
-      <!-- <tr>
-        <td><h4 id="rotate-text">Rotate</h4></td>
-        <td><%= image_tag "rotate_btn.png", class: 'img-responsive rotate-btn' %></td>
-      </tr> -->
+      
     </tbody>
   </table>
   
@@ -42,7 +39,11 @@
     <tbody id="grid">
       <% (0..10).each do |row| %>
         <tr class="<%= row %>">
-        <td class="col-xs-1 battleship-grid"><%= row %></td>
+        <% if row > 0 %>
+         <td class="col-xs-1 battleship-grid"><%= row %></td>
+        <% else %>
+          <td class="col-xs-1 battleship-grid"></td>
+        <% end %>
         <% ('A'..'J').each do |col| %>
           <% if row == 0 %>
             <td class="col-xs-1 battleship-grid"><%= col %></td>  

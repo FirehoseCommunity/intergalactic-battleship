@@ -23,15 +23,16 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    if current_user.id == params[:jedi_user_id].to_i
+    if params[:jedi_user_id] != nil
       @game.update(sith_user_id: current_user.id)
-      render template: "ships/index.html.erb" 
-    elsif current_user.id == params[:sith_user_id].to_i
+      render template: "ships/index.html.erb"
+    elsif params[:sith_user_id] != nil
       @game.update(jedi_user_id: current_user.id)
-      render template: "ships/index2.html.erb" 
+    render template: "ships/index2.html.erb" 
     else
       render text: "Invalid Request", status: :unprocessable_entity
-    end
+    end  
+        
   end
   
 end
