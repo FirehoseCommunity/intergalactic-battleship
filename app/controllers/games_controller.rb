@@ -7,6 +7,8 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
+    @game.initialize_board
+    redirect_to ships_path
   end
 
   def create
