@@ -8,8 +8,8 @@ FactoryGirl.define do
   end
   
   factory :game do
-    association :sith_user
-    association :jedi_user
+    association :sith_user, factory: :user
+    association :jedi_user, factory: :user
   end
 
   factory :ship do

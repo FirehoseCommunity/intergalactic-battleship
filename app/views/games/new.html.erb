@@ -1,9 +1,15 @@
-<h1> PICK A SIDE </h1>
-<hr>
-<div>
-  <%= link_to 'Become a Jedi Master', games_path(jedi_user_id: current_user.id), class: 'btn btn-primary', method: :post%>
-    ​
-   <%= link_to 'Become a Sith Master', games_path(sith_user_id: current_user.id), class: 'btn btn-danger', method: :post%>
-  
+<div class="row">
+  <div class="col-sm-4">
+    <%= image_tag "Jedi.png", class: 'img-responsive jediPic' %>
+    <br />
+    <%= link_to 'Become a Jedi Master', games_path(jedi_user_id: current_user.id), class: 'btn btn-primary become-jedi', method: :post%>
+  </div>
+  <div  class="col-sm-4">
+    <h1 class="text-center pickHeader"> PICK A SIDE </h1>
+  </div>
+  <div class="col-sm-4">
+    <%= image_tag "Sith.png", class: 'img-responsive sithPic' %>
+    <br />
+    <%= link_to 'Become a Sith Master', games_path(sith_user_id: current_user.id), class: 'btn btn-danger become-sith', method: :post%>
+  </div>
 </div>
-<hr>

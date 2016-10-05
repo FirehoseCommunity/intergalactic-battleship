@@ -22,7 +22,6 @@
 #landing_page_image img {
 	max-width: 100%;
 	max-height: 100%;
-	margin-top: -70px;
 }
 
 body {
@@ -59,5 +58,57 @@ a:hover {
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   margin-top: 10px;
   margin-bottom: 15px;
-  padding: 20px; 
+  padding: 10px; 
+}
+
+h1 {
+  color: white
+}
+
+.name {
+  margin-top: 10px;
+}
+
+.usr-img {
+  width: 130px;
+  margin: 0 auto;
+}
+
+#s-email {
+  margin-top: 30px;
+}
+
+#j-email {
+  margin-top: 40px;
+}
+
+.jedi-btn {
+  margin-top: 40px;
+}
+
+.sith-btn {
+  margin-top : 50px;
+}
+
+.sithPic {
+ width: 70%;
+ margin-top: 80px;
+ margin-bottom: 25px;
+}
+
+.jediPic {
+ width: 70%;
+ margin: 100px 0px 20px 80px;
+}
+
+.become-jedi {
+  margin-left: 150px;
+}
+
+.become-sith {
+  margin-left: 80px;
+}
+.pickHeader {
+  margin-top: 250px;
+  margin-right: 10px;
 }
