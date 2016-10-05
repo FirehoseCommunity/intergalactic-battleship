@@ -1,3 +1,63 @@
 // Place all the styles related to the ships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.battleship-grid {
+  border: 3px solid #fff;
+  background-color: #9BC1F4;
+  text-align: center;
+  vertical-align: middle;
+  width: 40px;
+  height: 43px;
+  color: #fff;
+  font-weight: bold;
+}
+
+#table-grid { 
+  margin: 30px 0 30px 420px;
+}
+
+.ship-name {
+  color: #fff;
+  font-size: 18px;
+}
+
+.ship-img {
+ margin: 10px 80px;
+ padding: 1px;
+ border: 1px solid white; 
+}
+
+#inst {
+  margin-bottom: 50px;
+  color: white;
+}
+
+#ship-table {
+  margin-left: 100px;
+  margin-top: 80px;
+}
+
+.play-btn {
+  margin-left: 630px;
+  margin-bottom: 50px;
+}
+
+.rotate-btn {
+  width: 15%;
+  margin-top: 40px;
+  margin-left: 60px;
+}
+
+#rotate-text {
+  margin-top: 55px;
+}
+
+.rotate{
+   -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
+}
