@@ -2,6 +2,14 @@
 <p class="text-center" id="inst">Click and drag the ships to the grid. <br/>
    Click on ship to position it horizontally or vertically.</p>
 
+<% @ships.each do |s| %>
+  <h2><%= s.name %></h2>
+  <%= image_tag "ship#{s.length}.png" %>
+  <p>ship<%= s.length %>.png</p> 
+  <p><%= s.x_coordinate %> <%= s.y_coordinate %></p>
+  
+<% end %>
+
 <div class="col-sm-10 table-responsive text-center">
 
   <table id="table-grid">
@@ -17,7 +25,13 @@
           <% if row == 0 %>
             <td class="col-xs-1 battleship-grid"><%= col %></td>  
           <% else %>  
-            <td class="col-xs-1 battleship-grid" data-xCoord="<%= col %>" data-yCoord="<%= row %>"></td>
+            <td class="col-xs-1 battleship-grid" data-xCoord="<%= col %>" data-yCoord="<%= row %>">
+              <% @ships.each do |s| %>
+                <% if s.x_coordinate == col && s.y_coordinate == row %>
+                  <h4>O</h4>
+                <% end %>  
+              <% end %>
+            </td> 
           <% end %>   
         <% end %>  
         </tr>
@@ -29,5 +43,5 @@
 </div>
 
 <div>
-<%= link_to 'Play Game!', games_path, class: 'btn btn-danger play-btn', method: :put%>
+<%= link_to 'Play Game!', '#', class: 'btn btn-danger play-btn', method: :put%>
 </div>

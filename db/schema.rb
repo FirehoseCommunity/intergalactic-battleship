@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160929211743) do
+ActiveRecord::Schema.define(version: 20161005233516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160929211743) do
     t.integer  "game_id"
     t.integer  "user_id"
     t.boolean  "vertical?"
-    t.integer  "x_coordinate"
+    t.string   "x_coordinate"
     t.integer  "y_coordinate"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160929211743) do
 
   create_table "strikes", force: true do |t|
     t.integer  "user_id"
-    t.integer  "x_coordinate"
+    t.string   "x_coordinate"
     t.integer  "y_coordinate"
     t.integer  "game_id"
     t.boolean  "hit"
