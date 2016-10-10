@@ -64,7 +64,7 @@ RSpec.describe GamesController, type: :controller do
     context "valid join request" do
       it "will allow authenticated user to join a game as Jedi" do
         sign_in user
-        g = FactoryGirl.create(:game, sith_user_id: user2.id) 
+        g = Game.create(sith_user_id: user2.id) 
         patch :update, id: g.id, jedi_user_id: user.id
         last = Game.last
 
@@ -75,7 +75,7 @@ RSpec.describe GamesController, type: :controller do
 
       it "will allow authenticated user to join a game as Sith" do
         sign_in user
-        g = FactoryGirl.create(:game, jedi_user_id: user2.id)
+        g = Game.create(jedi_user_id: user2.id)
         patch :update, id: g.id, sith_user_id: user.id
         last = Game.last
 

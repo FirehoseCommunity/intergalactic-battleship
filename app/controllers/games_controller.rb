@@ -24,10 +24,10 @@ class GamesController < ApplicationController
   def update
     #this needs to be cleaned up seriously using private game_params
     @game = Game.find(params[:id])
-    if (current_user.id != params[:jedi_user_id].to_i) && (@game.sith_user == nil)
+    if (current_user.id != params[:jedi_user_id].to_i) && (@game.sith_user_id == nil)
       @game.update(sith_user_id: current_user.id)
       redirect_to ships_path
-    elsif current_user.id != params[:sith_user_id].to_i && (@game.jedi_user == nil)
+    elsif current_user.id != params[:sith_user_id].to_i && (@game.jedi_user_id == nil)
       @game.update(jedi_user_id: current_user.id)
       redirect_to ships_path
     else
