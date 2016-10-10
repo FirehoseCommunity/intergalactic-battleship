@@ -4,42 +4,29 @@
 
 <% @ships.each do |s| %>
   <h2><%= s.name %></h2>
-  <%= image_tag "ship#{s.length}.png" %>
-  <p>ship<%= s.length %>.png</p> 
-  <p><%= s.x_coordinate %> <%= s.y_coordinate %></p>
+  <% s.length.times do %>
+    <div class="draggable">
+      <p>&#x25CF;</p>
+    </div>
+ <% end %> 
   
 <% end %>
 
-<div class="col-sm-10 table-responsive text-center">
-
-  <table id="table-grid">
-    <tbody id="grid">
-      <% (0..10).each do |row| %>
-        <tr class="<%= row %>">
-        <% if row > 0 %>
-         <td class="col-xs-1 battleship-grid"><%= row %></td>
-        <% else %>
-          <td class="col-xs-1 battleship-grid"></td>
-        <% end %>
-        <% ('A'..'J').each do |col| %>
-          <% if row == 0 %>
-            <td class="col-xs-1 battleship-grid"><%= col %></td>  
-          <% else %>  
-            <td class="col-xs-1 battleship-grid" data-xCoord="<%= col %>" data-yCoord="<%= row %>">
-              <% @ships.each do |s| %>
-                <% if s.x_coordinate == col && s.y_coordinate == row %>
-                  <h4>O</h4>
-                <% end %>  
-              <% end %>
-            </td> 
-          <% end %>   
-        <% end %>  
-        </tr>
+<div id="wrapper">
+    <% (0..10).each do |row| %>
+      <% if row > 0 %>
+        <div class="square textLabel"><%= row %></div>
+      <% else %>
+        <div class="square"></div>
+      <% end %>
+      <% ('A'..'J').each do |col| %>
+        <% if row == 0 %>
+          <div class="square textLabel"><%= col %></div>  
+        <% else %>  
+          <div class="square" data-xCoord="<%= col %>" data-yCoord="<%= row %>"></div>
+        <% end %>   
       <% end %> 
-        
-    </tbody>
-  </table>
-
+    <% end %> 
 </div>
 
 <div>

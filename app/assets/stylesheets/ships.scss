@@ -2,49 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.battleship-grid {
-  border: 3px solid #fff;
-  background-color: #9BC1F4;
-  text-align: center;
-  vertical-align: middle;
-  width: 40px;
-  height: 43px;
-  color: #fff;
+#wrapper {
+     margin: 10px auto;
+     width: 560px;
+     height: 560px;
+     border: 5px solid white;
+ }
+  
+ .square {
+     width: 50px;
+     height: 50px;
+     background-color: #9BC1F4;
+     border: 1px solid white;
+     float: left;
+ } 
+
+ .textLabel {
   font-weight: bold;
-}
-
-.ship {
-  background-color: gray;
   text-align: center;
-  vertical-align: middle;
-  color: #darkgray;
-  font-weight: bold;
-}
-
-#table-grid { 
-  margin: 30px 0 30px 420px;
-}
-
-.ship-name {
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
+  padding-top: 13px;
+ }
+
+.draggable {
+  height: 48px;
+  width: 48px;
+  background-color: #c3c3c3;
+  float: left;
 }
 
-.ship-img {
- margin: 10px 80px;
- padding: 1px;
- border: 1px solid white; 
+.draggable p {
+  color: #7f7f7f;
+  text-align: center;
+  font-size: 32px;
 }
 
-#inst {
-  margin-bottom: 50px;
-  color: white;
-}
-
-#ship-table {
-  margin-left: 100px;
-  margin-top: 80px;
-}
+.draggable.ui-draggable-dragging {
+  background: yellow;
+ }
 
 .play-btn {
   margin-left: 630px;
