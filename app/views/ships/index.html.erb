@@ -2,15 +2,37 @@
 <p class="text-center" id="inst">Click and drag the ships to the grid. <br/>
    Click on ship to position it horizontally or vertically.</p>
 
-<% @ships.each do |s| %>
-  <h2><%= s.name %></h2>
-  <% s.length.times do %>
-    <div class="draggable">
-      <p>&#x25CF;</p>
-    </div>
- <% end %> 
-  
-<% end %>
+<div id="ships">
+  <div class="draggable rotate" id="destroyer">
+    <p>&#x25CF;</p><p>&#x25CF;</p>
+  </div>
+  <br />
+  <h2>Destroyer</h2>
+  <br />
+  <div class="draggable rotate" id="crufight">
+    <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
+  </div>
+  <br />
+  <h2>Cruiser</h2>
+  <br />
+  <div class="draggable rotate" id="crufight">
+    <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
+  </div>
+  <br />
+  <h2>Fighter</h2>
+  <br />
+  <div class="draggable rotate" id="battleship">
+    <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
+  </div>
+  <br />
+  <h2>Battleship</h2>
+  <br /> 
+  <div class="draggable rotate" id="carrier">
+    <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
+  </div>
+  <br />
+  <h2>Carrier</h2>
+</div>
 
 <div id="wrapper">
     <% (0..10).each do |row| %>
@@ -30,5 +52,5 @@
 </div>
 
 <div>
-<%= link_to 'Play Game!', '#', class: 'btn btn-danger play-btn', method: :put%>
+<%= link_to 'Ready!', '#', class: 'btn btn-danger play-btn', method: :put%>
 </div>

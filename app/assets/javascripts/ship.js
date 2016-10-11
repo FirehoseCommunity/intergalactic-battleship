@@ -1,7 +1,9 @@
 $(function () {
 
+
   $('.square').droppable({
   tolerance: 'intersect',
+  snap: '.square',
   drop: function(event, ui) {
     var drop_p = $(this).offset();
     var drag_p = ui.draggable.offset();
@@ -19,5 +21,13 @@ $(function () {
     scroll: false,
     stack: ".square"
   });
+
+  $( ".rotate" ).click(function() {
+    if (  $( this ).css( "transform" ) == 'none' ){
+        $(this).css("transform","rotate(90deg)");
+    } else {
+        $(this).css("transform","" );
+    }
+});
 
 });
