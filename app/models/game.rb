@@ -1,7 +1,7 @@
 class Game < ActiveRecord::Base
   
   validate :validate_sith_user_or_jedi_user
-  validate :users_must_be_different
+  validate :users_must_be_different, :on => :update
 
   belongs_to :jedi_user, foreign_key: 'jedi_user_id', class_name: "User"
   belongs_to :sith_user, foreign_key: 'sith_user_id', class_name: "User"
