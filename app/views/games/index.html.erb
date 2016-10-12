@@ -3,7 +3,7 @@
 <br />
 <div class= "col-xs-12">
   <% @games.each do |game|%>
-    <% if (game.jedi_user_id != nil) && (game.sith_user_id == nil) %>
+    <% if game.sith_user_id.nil? && !game.jedi_user_id.nil? && game.jedi_user_id != current_user.id %>
       <div class="booyah-box col-xs-10 col-xs-offset-1 text-center">
         <p><%= game.id %></p>
         <div class="col-sm-4" >
@@ -17,7 +17,7 @@
           <%= link_to 'Join Game as Sith Master', game_path(game.id, sith_user_id: current_user.id) , class: 'btn btn-primary sith-btn', method: :put%>
         </div>
       </div>
-    <% elsif (game.sith_user_id != nil) && (game.jedi_user_id == nil) %>
+    <% elsif game.jedi_user_id.nil? && !game.sith_user_id.nil? && (game.sith_user_id != current_user.id) %>
       <div class="booyah-box col-xs-10 col-xs-offset-1 text-center">
         <p><%= game.id %></p>
         <div class="col-sm-4" > 
