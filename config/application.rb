@@ -25,5 +25,8 @@ module IntergalacticBattleship
 
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .ttf .woff2 )
+    
+    # Serve static assets on Heroku:
+    config.serve_static_assets = true
   end
 end
