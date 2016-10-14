@@ -2,7 +2,6 @@ class ShipsController < ApplicationController
 
   def index
     @ships = Ship.where("game_id = ? AND user_id = ?", params[:game_id], current_user.id)
-    
   end
 
   private

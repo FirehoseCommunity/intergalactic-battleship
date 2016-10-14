@@ -72,11 +72,20 @@
   width: 249px;
 }
 
+#coords {
+  font-size: 14px;
+  display: inline;
+  float: right;
+  margin-right: -5px;
+  margin-top: -26px;
+}
+
 .play-btn {
   padding: 5px;
   font-size: 20px;
-  margin: 50px 0 50px 610px;
+  margin: 50px 0 50px 710px;
 }
+
 
 .rotate{
   -webkit-transition-duration: 1s;
@@ -87,4 +96,6 @@
   -moz-transition-property: -moz-transform;
   -o-transition-property: -o-transform;
   transition-property: transform;
+  transform-origin: top left;
+
 }
