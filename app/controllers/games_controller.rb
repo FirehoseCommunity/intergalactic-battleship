@@ -22,14 +22,18 @@ class GamesController < ApplicationController
   end
 
   def update
-    valid_update
-    # begin
-    #   valid_update
-    # rescue ActiveRecord::RecordInvalid
-    #   redirect_to games_path, flash: {alert: current_game.errors.full_messages.last} 
-    # rescue
-    #   redirect_to games_path, flash: {alert: "Invalid Request."} 
-    # end
+    if current_game.sith_user_id.nil?
+      current_game.update_attributes(sith_user_id: current_user.id)
+    elsif current_game.jedi_user_id.nil?
+      current_game.update_attributes(jedi_user_id: current_user.id)
+    end
+    if current_game.valid?
+      redirect_to ships_path, flash: {
+        notice: "You joined the game! Please place your ships."}
+    else
+      redirect_to games_path, flash: {
+        alert: "Invalid Request. #{current_game.errors.full_messages.last}"}
+    end    
   end
 
   private
@@ -40,20 +44,4 @@ class GamesController < ApplicationController
     @current_game ||= Game.find(params[:id])
   end
 
-  def game_params
-    params.require(:game).permit(:jedi_user_id, :sith_user_id)
-  end
-
-  def valid_update
-    # current_game.errors.clear
-    if current_game.sith_user_id.nil?
-      current_game.update_attributes!(sith_user_id: current_user.id)
-      redirect_to ships_path, flash: {
-        notice: "You joined the game! Please place your ships."}
-    else current_game.jedi_user_id.nil?
-      current_game.update_attributes!(jedi_user_id: current_user.id)
-      redirect_to ships_path, flash: {
-        notice: "You joined the game! Please place your ships."}
-    end
-  end
 end

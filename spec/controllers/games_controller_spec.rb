@@ -97,27 +97,21 @@ RSpec.describe GamesController, type: :controller do
       it "will not let user join their own game" do
         game = Game.create(jedi_user_id: user.id)
         sign_in user
-        # post :update, id: game.id, sith_user_id: user.id
+        post :update, id: game.id, sith_user_id: user.id
 
-        # expect(response).to redirect_to games_path
-        # # expect(flash[:alert]).to match("Invalid Request.")
-        # expect(flash[:alert]).to match("Jedi and Sith users cannot be the same!")
+        expect(response).to redirect_to games_path
+        expect(flash[:alert]).to match("Jedi and Sith users cannot be the same!")
 
-        expect {post :update, id: game.id, sith_user_id: user.id}.to raise_error(
-          ActiveRecord::RecordInvalid, 
-          "Validation failed: Jedi and Sith users cannot be the same!")
       end
-      
-# Find a way to make bad data fail gracefully and test it properly
-# WHY DOESN'T THIS WORK??!!??
-      # it "fails gracefully" do
-      #   game = Game.create(jedi_user_id: user.id)
-      #   sign_in user
 
-      #   post :update, id: game.id, sith_user_id: "FOO"
-      #   expect(response).to redirect_to games_path
-      #   expect(flash[:alert]).to match("Invalid Request.")
-      # end
+      it "fails gracefully" do
+        game = Game.create(jedi_user_id: user.id)
+        sign_in user
+
+        post :update, id: game.id, sith_user_id: "FOO"
+        expect(response).to redirect_to games_path
+        expect(flash[:alert]).to match("Invalid Request.")
+      end
     end
   end
 end
