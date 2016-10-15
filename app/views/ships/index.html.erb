@@ -15,7 +15,7 @@
         <% if row == 0 %>
           <div class="square textLabel"><%= col %></div>  
         <% else %>  
-          <div class="square" data-xcoord="<%= col %>"" data-ycoord="<%= row %>">
+          <div class="square" data-xcoord="<%= col %>" data-ycoord="<%= row %>">
             <% @ships.each do |s| %>
               <% if s.x_coordinate == col && s.y_coordinate == row %>
                 <% if s.name == "Destroyer" %>
