@@ -15,38 +15,38 @@
         <% if row == 0 %>
           <div class="square textLabel"><%= col %></div>  
         <% else %>  
-          <div class="square" dataCoords="<%= col %><%= row %>">
+          <div class="square" data-xcoord="<%= col %>"" data-ycoord="<%= row %>">
             <% @ships.each do |s| %>
               <% if s.x_coordinate == col && s.y_coordinate == row %>
                 <% if s.name == "Destroyer" %>
                   <div class="draggable rotate" id="destroyer">
                     <p>&#x25CF;</p><p>&#x25CF;</p>
-                    <p id="coords"><%= s.x_coordinate %><%= s.y_coordinate %></p>
+                    <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
 
                   </div>
                 <% end %>
                  <% if s.name == "Cruiser" %>
                   <div class="draggable rotate" id="crufight">
                     <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
-                    <p id="coords"><%= s.x_coordinate %><%= s.y_coordinate %></p>
+                    <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
                   </div>
                 <% end %>
                 <% if s.name == "Fighter" %>
                   <div class="draggable rotate" id="crufight">
                     <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
-                    <p id="coords"><%= s.x_coordinate %><%= s.y_coordinate %></p>
+                    <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
                   </div>
                 <% end %>
                 <% if s.name == "Battleship" %>
                   <div class="draggable rotate" id="battleship">
                     <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
-                    <p id="coords"><%= s.x_coordinate %><%= s.y_coordinate %></p>
+                    <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
                   </div>
                 <% end %>
                 <% if s.name == "Carrier" %>
                   <div class="draggable rotate" id="carrier">
                     <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
-                    <p id="coords"><%= s.x_coordinate %><%= s.y_coordinate %></p>
+                    <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
                   </div>
                 <% end %>
               <% end %>
