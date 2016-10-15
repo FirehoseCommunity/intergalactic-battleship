@@ -6,12 +6,16 @@ A battleship game created by [Firehose Project](http://thefirehoseproject.com) s
 
 Find it on [Heroku](https://intergalacticbattleship.herokuapp.com/)
 
+## Current Contributors (Q4 2016):
+* [Kamakshi Patel](https://github.com/kpat108)
+* [Amanda Mark](https://github.com/amarkpark/)
+
 ## Contributors:
 * [Robert Sapunarich](https://github.com/robertsapunarich)
-* Aubrette Reid
-* Katrina Schreiber
-* Wil Santana
-* Kamakshi Patel
+* [Aubrette Reid](https://github.com/DarthDARKFather)
+* [Katrina Schreiber](https://github.com/katschre)
+* [Wil Santana](https://github.com/fredosantana) 
+* [Kamakshi Patel](https://github.com/kpat108)
 * [Risse Rigdon](https://github.com/risu-kun)
 * [Diane Van Etten](https://github.com/dvanetten03)
 * [Amanda Mark](https://github.com/amarkpark/)
