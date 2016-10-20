@@ -27,7 +27,7 @@ class GamesController < ApplicationController
       current_game.update_attributes(jedi_user_id: current_user.id)
     end
     if current_game.valid?
-      @game.initialize_board(@game.id, current_user.id)
+      current_game.initialize_board(current_game.id, current_user.id)
        redirect_to game_ships_path(@game), flash: {
         notice: "You joined the game! Please place your ships."}
     else
