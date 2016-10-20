@@ -5,6 +5,16 @@ $(function () {
   tolerance: 'intersect',
   snap: '.square',
   drop: function(event, ui) {
+    var piece = $(".lastClicked");
+    var ship = piece.data("shipId");
+    var x = $(event.target).data("xcoord");
+    var y = $(event.target).data("ycoord");
+    var shipAttributes = {
+      x: x, 
+      y: y, 
+      ship_id: ship
+    };
+    console.log(shipAttributes);
     var drop_p = $(this).offset();
     var drag_p = ui.draggable.offset();
     var left_end = drop_p.left - drag_p.left + 1;
@@ -30,6 +40,10 @@ $(function () {
     }
 });
 
-
+$('.piece').mousedown(function(){
+  console.log(this);
+  $('.lastClicked').removeClass('lastClicked');
+  $(this).addClass('lastClicked');
+});
 
 });

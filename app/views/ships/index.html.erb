@@ -19,32 +19,32 @@
             <% @ships.each do |s| %>
               <% if s.x_coordinate == col && s.y_coordinate == row %>
                 <% if s.name == "Destroyer" %>
-                  <div class="draggable rotate" id="destroyer">
+                  <div class="piece draggable rotate" id="destroyer" data-ship-id="<%= s.id %>">
                     <p>&#x25CF;</p><p>&#x25CF;</p>
                     <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
 
                   </div>
                 <% end %>
                  <% if s.name == "Cruiser" %>
-                  <div class="draggable rotate" id="crufight">
+                  <div class="piece draggable rotate" id="crufight">
                     <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
                     <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
                   </div>
                 <% end %>
                 <% if s.name == "Fighter" %>
-                  <div class="draggable rotate" id="crufight">
+                  <div class="piece draggable rotate" id="crufight">
                     <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
                     <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
                   </div>
                 <% end %>
                 <% if s.name == "Battleship" %>
-                  <div class="draggable rotate" id="battleship">
+                  <div class="piece draggable rotate" id="battleship">
                     <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
                     <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
                   </div>
                 <% end %>
                 <% if s.name == "Carrier" %>
-                  <div class="draggable rotate" id="carrier">
+                  <div class="piece draggable rotate" id="carrier">
                     <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
                     <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
                   </div>
