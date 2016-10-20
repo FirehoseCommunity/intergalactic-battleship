@@ -1,1 +1,62 @@
-<h1> SHIPS </h1>
+<h1 class="text-center"> Place Your Ships! </h1>
+<p class="text-center" id="inst">Click and drag the ships to the grid. <br/>
+   Click on ship to position it horizontally or vertically.</p>
+
+
+
+<div id="wrapper">
+    <% (0..10).each do |row| %>
+      <% if row > 0 %>
+        <div class="square textLabel"><%= row %></div>
+      <% else %>
+        <div class="square"></div>
+      <% end %>
+      <% (1..10).each do |col| %>
+        <% if row == 0 %>
+          <div class="square textLabel"><%= col %></div>  
+        <% else %>  
+          <div class="square" data-xcoord="<%= col %>" data-ycoord="<%= row %>">
+            <% @ships.each do |s| %>
+              <% if s.x_coordinate == col && s.y_coordinate == row %>
+                <% if s.name == "Destroyer" %>
+                  <div class="draggable rotate" id="destroyer">
+                    <p>&#x25CF;</p><p>&#x25CF;</p>
+                    <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
+
+                  </div>
+                <% end %>
+                 <% if s.name == "Cruiser" %>
+                  <div class="draggable rotate" id="crufight">
+                    <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
+                    <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
+                  </div>
+                <% end %>
+                <% if s.name == "Fighter" %>
+                  <div class="draggable rotate" id="crufight">
+                    <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
+                    <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
+                  </div>
+                <% end %>
+                <% if s.name == "Battleship" %>
+                  <div class="draggable rotate" id="battleship">
+                    <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
+                    <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
+                  </div>
+                <% end %>
+                <% if s.name == "Carrier" %>
+                  <div class="draggable rotate" id="carrier">
+                    <p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
+                    <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>   
+      <% end %> 
+    <% end %> 
+</div>
+
+<div>
+<%= link_to 'Ready!', '#', class: 'btn btn-danger play-btn', method: :put%>
+</div>

@@ -1,3 +1,101 @@
 // Place all the styles related to the ships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#inst {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+#ships {
+  width: 0;
+  float: left;
+  margin: 50px;
+}
+
+#wrapper {
+     margin: 10px auto;
+     width: 560px;
+     height: 560px;
+     border: 5px solid white;
+ }
+  
+ .square {
+     width: 50px;
+     height: 50px;
+     background-color: #9BC1F4;
+     border: 1px solid white;
+     float: left;
+ } 
+
+ .textLabel {
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  padding-top: 13px;
+ }
+
+.draggable {
+  height: 48px;
+  width: 48px;
+  background-color: #c3c3c3;
+  float: left;
+}
+
+.draggable p {
+  color: #7f7f7f;
+  float: left;
+  font-size: 32px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.draggable.ui-draggable-dragging {
+  background: yellow;
+ }
+
+#destroyer {
+  width: 97px;
+}
+
+#crufight {
+  width: 149px;
+}
+
+#battleship {
+  width: 200px;
+}
+
+#carrier {
+  width: 249px;
+}
+
+#coords {
+  font-size: 14px;
+  display: inline;
+  float: right;
+  margin-right: -5px;
+  margin-top: -26px;
+}
+
+.play-btn {
+  padding: 5px;
+  font-size: 20px;
+  margin: 50px 0 50px 710px;
+}
+
+
+.rotate{
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  transform-origin: top left;
+
+}

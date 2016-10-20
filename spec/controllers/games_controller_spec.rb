@@ -5,6 +5,7 @@ RSpec.describe GamesController, type: :controller do
   let(:user) { FactoryGirl.create(:user) }
   let(:user2) { FactoryGirl.create(:user) }
 
+
   describe "games#index action" do
     
     it "will successfully show the page" do
@@ -33,18 +34,17 @@ RSpec.describe GamesController, type: :controller do
   describe "games#create action" do
     it "will require users to be logged in" do
       post :create, sith_user_id: 1
-
       expect(response).to redirect_to new_user_session_path
     end
  
     it "will successfully create a new game in our database as Sith" do
       sign_in user
       count = Game.all.length
-      post :create, sith_user_id: user.id 
+      post :create, sith_user_id: user.id
       count2 = Game.all.length
-
+      game = Game.last
       expect(count2).to eq(count + 1)
-      expect(response).to redirect_to games_path
+      expect(response).to redirect_to game_ships_path(game.id)
     end
 
     it "will properly deal with validation errors" do
@@ -65,7 +65,7 @@ RSpec.describe GamesController, type: :controller do
         last = Game.last
 
         expect(last.jedi_user_id).to eq(user.id)
-        expect(response).to redirect_to ships_path 
+        expect(response).to redirect_to game_ships_path(g.id) 
         expect(flash[:notice]).to match("You joined the game! Please place your ships.")
         # test that primary game owner is alerted to game update
       end
@@ -77,7 +77,7 @@ RSpec.describe GamesController, type: :controller do
         last = Game.last
 
         expect(last.sith_user_id).to eq(user.id)
-        expect(response).to redirect_to ships_path 
+        expect(response).to redirect_to game_ships_path(g.id)
         expect(flash[:notice]).to match("You joined the game! Please place your ships.")
         # test that primary game owner is alerted to game update
       end
