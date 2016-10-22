@@ -7,13 +7,13 @@
 <div id="wrapper">
     <% (0..10).each do |row| %>
       <% if row > 0 %>
-        <div class="square textLabel"><%= row %></div>
+        <div class="textLabel"><%= row %></div>
       <% else %>
         <div class="square"></div>
       <% end %>
       <% (1..10).each do |col| %>
         <% if row == 0 %>
-          <div class="square textLabel"><%= col %></div>  
+          <div class="textLabel"><%= col %></div>  
         <% else %>  
           <div class="square" data-xcoord="<%= col %>" data-ycoord="<%= row %>">
             <% @ships.each do |s| %>
@@ -22,7 +22,6 @@
                   <div class="piece draggable rotate" id="destroyer" data-ship-id="<%= s.id %>">
                     <p>&#x25CF;</p><p>&#x25CF;</p>
                     <p id="coords"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
-
                   </div>
                 <% end %>
                  <% if s.name == "Cruiser" %>

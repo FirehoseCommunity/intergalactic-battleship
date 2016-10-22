@@ -33,7 +33,11 @@ $(function () {
   });
 
   $( ".rotate" ).click(function() {
-    if (  $( this ).css( "transform" ) == 'none' ){
+    console.log($('#coords').text());
+    if ($('#coords').text() == 1) {
+        $(this).css("transform","" );
+    }    
+    if ($(this).css( "transform" ) == 'none') { 
         $(this).css("transform","rotate(90deg)");
     } else {
         $(this).css("transform","" );
