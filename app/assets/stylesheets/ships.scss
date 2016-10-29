@@ -5,14 +5,9 @@
 #inst {
   color: white;
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
-#ships {
-  width: 0;
-  float: left;
-  margin: 50px;
-}
 
 #wrapper {
      margin: 10px auto;
@@ -42,6 +37,19 @@
   float: left;
  }
 
+#title {
+  color: white;
+  margin: 10px 0;
+}
+
+.ship {
+  margin: 30px 80px;
+}
+
+.orientBtn {
+  margin-right: 20px;
+}
+
 .draggable {
   height: 48px;
   width: 48px;
@@ -61,29 +69,41 @@
   background: yellow;
  }
 
+.destroyerHorz {
+  width: 97px;
+  height: 48px;
+  background-color: gray;
+  z-index: 1;
+}
+
 #destroyer {
   width: 97px;
 }
 
-#crufight {
-  width: 149px;
+#cruiser{
+  width: 148px;
+  height: 48px;
+  background-color: blue;
+}
+
+#fighter {
+  width: 148px;
+  height: 48px;
+  background-color: red;
 }
 
 #battleship {
   width: 200px;
+  height: 48px;
+  background-color: green;
 }
 
 #carrier {
   width: 249px;
+  height: 48px;
+  background-color: orange;
 }
 
-#coords {
-  font-size: 14px;
-  display: inline;
-  float: right;
-  margin-right: -5px;
-  margin-top: -26px;
-}
 
 .play-btn {
   padding: 5px;
@@ -103,4 +123,8 @@
   transition-property: transform;
   transform-origin: top left;
 
+}
+
+.displayHorz {
+  left: 400px;
 }
