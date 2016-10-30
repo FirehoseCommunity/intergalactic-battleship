@@ -1,6 +1,42 @@
 <h1 class="text-center"> Place Your Ships! </h1>
-<p class="text-center" id="inst">Click and drag the ships to the grid. <br/>
-   Click on ship to position it horizontally or vertically.</p>
+<p class="text-center" id="inst">Click (top-left corner) and drag the ships to the grid. <br/>
+   Click on vertical button to position ship vertically. You may need to slightly re-position ship</p>
+ 
+<div class="col-sm-4">
+  <div id="container">
+    <h2 class="text-center">Ships:</h2>
+    <% @ships.each do |s| %>
+      <% if s.name == "Destroyer" %>
+        <div class="piece draggable destroyerHorz" data-ship-id="<%= s.id %>" data-x= "<%= s.x_coordinate %>" data-y= "<%= s.y_coordinate %>" data-length="<%= s.length %>" data-name="<%=s.name %>">
+          <p class="drag">&#x25CF;</p><p>&#x25CF;</p>
+        </div>
+      <% end %>
+      <% if s.name == "Cruiser" %>
+        <div class="piece draggable cruiserHorz" data-ship-id="<%= s.id %>" data-x= "<%= s.x_coordinate %>" data-y= "<%= s.y_coordinate %>" data-length="<%= s.length %>" data-name="<%=s.name %>">
+          <p class="drag">&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
+        </div>
+      <% end %>
+      <% if s.name == "Fighter" %>
+        <div class="piece draggable fighterHorz" data-ship-id="<%= s.id %>" data-x= "<%= s.x_coordinate %>" data-y= "<%= s.y_coordinate %>" data-length="<%= s.length %>" data-name="<%=s.name %>">
+          <p class="drag">&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
+        </div>
+      <% end %>
+      <% if s.name == "Battleship" %>
+        <div class="piece draggable battleshipHorz" data-ship-id="<%= s.id %>" data-x= "<%= s.x_coordinate %>" data-y= "<%= s.y_coordinate %>" data-length="<%= s.length %>" data-name="<%=s.name %>">
+          <p class="drag">&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
+        </div>
+      <% end %>
+      <% if s.name == "Carrier" %>
+        <div class="piece draggable carrierHorz" data-ship-id="<%= s.id %>" data-x= "<%= s.x_coordinate %>" data-y= "<%= s.y_coordinate %>" data-length="<%= s.length %>" data-name="<%=s.name %>">
+          <p class="drag">&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
+        </div>
+      <% end %>
+    <% end %>
+    <button class="btn btn-primary" id="vert">Vertical</button> 
+  </div>     
+</div>
+
+<div class="col-sm-8">
   <div id="wrapper">
     <% (0..10).each do |row| %>
       <% if row > 0 %>
@@ -13,47 +49,13 @@
           <div class="textLabel"><%= col %></div>  
         <% else %>  
           <div class="square" data-xcoord="<%= col %>" data-ycoord="<%= row %>">
-            
-            <% @ships.each do |s| %>
-              <% if s.x_coordinate == col && s.y_coordinate == row %>
-                <% if s.name == "Destroyer" %>
-                  <div class="piece draggable rotate" id="destroyer" data-ship-id="<%= s.id %>" data-x= "<%= s.x_coordinate %>" data-length="<%= s.length %>" data-name="<%=s.name %>">
-                    <p class="drag">&#x25CF;</p><p>&#x25CF;</p>
-                    <!-- <p class="destCoord"><%= s.x_coordinate %>-<%= s.y_coordinate %></p> -->
-                  </div>
-                <% end %>
-                <% if s.name == "Cruiser" %>
-                  <div class="piece draggable rotate" id="cruiser" data-ship-id="<%= s.id %>" data-x= "<%= s.x_coordinate %>" data-length="<%= s.length %>" data-name="<%=s.name %>">
-                    <p class="drag">&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
-<!--                     <p class="coordinates"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
- -->              </div>
-                <% end %>
-                <% if s.name == "Fighter" %>
-                  <div class="piece draggable rotate" id="fighter" data-ship-id="<%= s.id %>" data-x= "<%= s.x_coordinate %>" data-length="<%= s.length %>" data-name="<%=s.name %>">
-                    <p class="drag">&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
-<!--                     <p class="coordinates"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
- -->                  </div>
-                <% end %>
-                <% if s.name == "Battleship" %>
-                  <div class="piece draggable rotate" id="battleship" data-ship-id="<%= s.id %>" data-x= "<%= s.x_coordinate %>" data-length="<%= s.length %>" data-name="<%=s.name %>">
-                    <p class="drag">&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
-<!--                     <p class="coordinates"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
- -->                  </div>
-                <% end %>
-                <% if s.name == "Carrier" %>
-                  <div class="piece draggable rotate" id="carrier" data-ship-id="<%= s.id %>" data-x= "<%= s.x_coordinate %>" data-length="<%= s.length %>" data-name="<%=s.name %>">
-                    <p class="drag">&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p><p>&#x25CF;</p>
-<!--                     <p class="coordinates"><%= s.x_coordinate %>-<%= s.y_coordinate %></p>
- -->              </div>
-                <% end %>
-              <% end %>
-            <% end %>
-
           </div>
         <% end %>   
       <% end %> 
     <% end %> 
   </div>
+</div>
+
 <div>
 <%= link_to 'Ready!', '#', class: 'btn btn-danger play-btn', method: :put%>
 </div>

@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#inst {
+body {
   color: white;
+}
+
+#inst {
   font-size: 18px;
   margin-bottom: 60px;
 }
@@ -42,19 +45,16 @@
   margin: 10px 0;
 }
 
-.ship {
-  margin: 30px 80px;
-}
-
-.orientBtn {
-  margin-right: 20px;
+#vert {
+  margin-top: 20px;
+  margin-left: 10px;
 }
 
 .draggable {
-  height: 48px;
-  width: 48px;
-  background-color: #c3c3c3;
   float: left;
+  height: 48px;
+  margin: 10px;
+  background-color: #C3C3C3;
 }
 
 .draggable p {
@@ -65,52 +65,36 @@
   padding-right: 14px;
 }
 
-.draggable.ui-draggable-dragging {
-  background: yellow;
- }
+#container {
+  height: 90px;
+  margin: 60px 130px;
+}
 
 .destroyerHorz {
   width: 97px;
-  height: 48px;
-  background-color: gray;
-  z-index: 1;
 }
 
-#destroyer {
-  width: 97px;
-}
-
-#cruiser{
+.cruiserHorz{
   width: 148px;
-  height: 48px;
-  background-color: blue;
 }
 
-#fighter {
+.fighterHorz {
   width: 148px;
-  height: 48px;
-  background-color: red;
 }
 
-#battleship {
+.battleshipHorz {
   width: 200px;
-  height: 48px;
-  background-color: green;
 }
 
-#carrier {
+.carrierHorz {
   width: 249px;
-  height: 48px;
-  background-color: orange;
 }
-
 
 .play-btn {
-  padding: 5px;
+  padding: 10px;
   font-size: 20px;
-  margin: 50px 0 50px 710px;
+  margin: 50px 0 50px 550px;
 }
-
 
 .rotate{
   -webkit-transition-duration: 1s;
@@ -123,8 +107,4 @@
   transition-property: transform;
   transform-origin: top left;
 
-}
-
-.displayHorz {
-  left: 400px;
 }
