@@ -4,7 +4,7 @@
  
 <div class="col-sm-4">
   <div id="container">
-    <h2 class="text-center">Ships:</h2>
+    <h2 class="text-center" id="head">Ships:</h2>
     <% @ships.each do |s| %>
       <% if s.name == "Destroyer" %>
         <div class="piece draggable destroyerHorz" data-ship-id="<%= s.id %>" data-x= "<%= s.x_coordinate %>" data-y= "<%= s.y_coordinate %>" data-length="<%= s.length %>" data-name="<%=s.name %>">

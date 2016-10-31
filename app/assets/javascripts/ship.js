@@ -1,5 +1,21 @@
 $(function () {
    
+  $('.piece').mousedown(function(){
+    console.log(this);
+    $('.lastClicked').removeClass('lastClicked');
+    $(this).addClass('lastClicked');
+  });
+
+  $('.draggable').draggable({
+    containment: "#wrapper",
+    revert: 'invalid',
+    scroll: false,
+    stack: ".square",
+    opacity: 0.6, 
+    cursor: "move",
+    handle: ".drag"
+  });
+
   $('.square').droppable({
     tolerance: 'pointer',
     snap: '.square',
@@ -36,38 +52,26 @@ $(function () {
         top: '+=' + top_end,
         left: '+=' + left_end,
       });
+      $(piece).addClass('dragged');
     }
 
     if((endY > 10) || (x == 1)) {
       $(piece).css("transform", "rotate(0deg)");
     }
+
+    if($(piece).hasClass('dragged')) {
+      $('#vert').prop('disabled', false);
+      $('#vert').on("click", function(){
+        if($(piece).css("transform") == 'none') {
+          $(piece).css("transform", "rotate(90deg)").addClass('rotate');
+          $(piece).css("transform");
+        };
+      });
+    } else {
+      $('#vert').prop('disabled', true);
+    }
   }
+
   
-  $('.draggable').draggable({
-    containment: "#wrapper",
-    revert: 'invalid',
-    scroll: false,
-    stack: ".square",
-    opacity: 0.6, 
-    cursor: "move",
-    handle: ".drag"
-  });
-
-  $('.piece').mousedown(function(){
-    console.log(this);
-    $('.lastClicked').removeClass('lastClicked');
-    $(this).addClass('lastClicked');
-  });
-
-  $('#vert').on("click", function(){
-    var piece = $('.lastClicked');
- 
-    if($(piece).css("transform") == 'none') {
-      $(piece).css("transform", "rotate(90deg)").addClass('rotate');
-      $(piece).css("transform");
-    };
-  });
-
-
 });
     
