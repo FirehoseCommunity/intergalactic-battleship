@@ -18,11 +18,11 @@ class Game < ActiveRecord::Base
 
 
   def initialize_board(game, user)
-    Ship.create(name: "Destroyer", x_coordinate: 1, y_coordinate: 1, game_id: game, user_id: user, length: 2, vertical?: false)
-    Ship.create(name: "Cruiser", x_coordinate: 1, y_coordinate: 2, game_id: game, user_id: user, length: 3, vertical?: false)
-    Ship.create(name: "Fighter", x_coordinate: 1, y_coordinate: 3, game_id: game, user_id: user, length: 3, vertical?: false)
-    Ship.create(name: "Battleship", x_coordinate: 1, y_coordinate: 4, game_id: game, user_id: user, length: 4, vertical?: false)
-    Ship.create(name: "Carrier", x_coordinate: 1, y_coordinate: 5, game_id: game, user_id: user, length: 5, vertical?: false)
+    Ship.create(name: "Destroyer", game_id: game, user_id: user, length: 2, vertical?: false)
+    Ship.create(name: "Cruiser", game_id: game, user_id: user, length: 3, vertical?: false)
+    Ship.create(name: "Fighter", game_id: game, user_id: user, length: 3, vertical?: false)
+    Ship.create(name: "Battleship", game_id: game, user_id: user, length: 4, vertical?: false)
+    Ship.create(name: "Carrier", game_id: game, user_id: user, length: 5, vertical?: false)
   end
 
 

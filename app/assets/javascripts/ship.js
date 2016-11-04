@@ -41,6 +41,21 @@ $(function () {
       name: name
     };
     console.log(shipAttributes);
+
+    $.ajax({
+      url: "https://games/:id/move",
+      type: 'PUT',
+      dataType: 'json',
+      data: {ship_id: ship, x: x, y: y},
+        success: function() {
+          alert(data);
+          // location.reload(true); //refreshes page from server after move
+        },
+        error: function() {
+          location.reload(true); //refreshes page from server after failed move
+        }
+    });
+
     var drop_p = $(this).offset();
     var drag_p = ui.draggable.offset();
     var left_end = drop_p.left - drag_p.left + 1;
